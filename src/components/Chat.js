@@ -76,7 +76,7 @@ class Chat extends Component {
 		const self = this;
 
 		// se establece la definicion del socket
-		const socket = this.socket = socketIO('http://localhost:6001/chat');
+		const socket = this.socket = socketIO('http://34.208.11.60:6003/chat');
 
 		socket.on('connect', function() {
 

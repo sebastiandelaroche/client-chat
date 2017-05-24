@@ -16,14 +16,14 @@ class Http {
 				body
 			};
 			
-			promise = fetch(`http://localhost:6001/${uri}`, config)
+			promise = fetch(`http://34.208.11.60:6003/${uri}`, config)
 			.then(response => {
 				return response.json();
 			});
 
 		} else {
 
-			promise = fetch(`http://localhost:6001/${uri}`)
+			promise = fetch(`http://34.208.11.60:6003/${uri}`)
 			.then(response => {
 				return response.json();
 			});

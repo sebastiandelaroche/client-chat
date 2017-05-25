@@ -83,10 +83,12 @@ class Chat extends Component {
 			const user = JSON.parse(window.localStorage.getItem("USER"));
 
 			// socket.io.engine.id = "12345"
-			socket.emit('change-client-id', {
-				clientID: socket.io.engine.id,
-				userId: user._id
-			});
+			// socket.emit('change-client-id', {
+			// 	clientID: socket.io.engine.id,
+			// 	userId: user._id
+			// });
+
+			socket.emit('change-client-id', user._id);
 
 			socket.on('any-error', data => {
 

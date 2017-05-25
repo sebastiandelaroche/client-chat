@@ -46,8 +46,7 @@ class ChatMessage extends Component {
 
 		socket.emit('send-message', {
 			message: message,
-			sender: user,
-			receiver: userChat
+			receiver: userChat._id
 		});
 
 		this.setState({

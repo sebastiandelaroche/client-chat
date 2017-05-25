@@ -62,7 +62,8 @@ class ChatMessage extends Component {
 		const {message} = this.state;
 
 		const listMessage = messages.map((message, index) => {
-			return <Message key={`message-${index}`} message={message.message} _from={message.from} />
+			// return <Message key={`message-${index}`} message={message.message} _from={message.from} />
+			return <div key={`message-${index}`}>{message}</div>
 		});
 
 		return (

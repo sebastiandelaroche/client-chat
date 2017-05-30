@@ -93,18 +93,21 @@ class Chat extends Component {
 			socket.on('any-error', data => {
 
 				// @TODO controller error
-				console.log('data', data);
+				console.log('data:any-error', data);
 
 			});
 
 
 			socket.on('receive-message', data => {
 			
-				// messages
-				const {messages} = self.state;
+
+				console.log("data", data)
+
+				// // messages
+				// const {messages} = self.state;
 				
-				messages.push(data);
-				self.setState({ messages });
+				// messages.push(data);
+				// self.setState({ messages });
 
 			});
 

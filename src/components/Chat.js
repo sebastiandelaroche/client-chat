@@ -76,9 +76,14 @@ class Chat extends Component {
 		const self = this;
 
 		// se establece la definicion del socket
-		const socket = this.socket = socketIO('http://34.208.11.60:6003/chat');
+		const socket = this.socket = socketIO('http://192.168.2.24:6001/chat', {
+			'force new connection': true
+		});
 
 		socket.on('connect', function() {
+
+
+			console.log('connect ...');
 
 			const user = JSON.parse(window.localStorage.getItem("USER"));
 
@@ -97,11 +102,9 @@ class Chat extends Component {
 
 			});
 
-
 			socket.on('receive-message', data => {
 			
-
-				console.log("data", data)
+				console.log("data", data);	
 
 				// // messages
 				// const {messages} = self.state;
@@ -111,8 +114,13 @@ class Chat extends Component {
 
 			});
 
+		});
 
-		})
+		socket.on('error', function(err) {
+		// handle server error here
+			console.log('Error net::ERR_CONNECTION_REFUSED occured. Handle me', err);
+		});
+
 
 	}
 
@@ -128,6 +136,9 @@ class Chat extends Component {
 				users : data
 			});
 	
+		})
+		.catch(err => {
+			console.log('err', err);
 		})
 
 	}

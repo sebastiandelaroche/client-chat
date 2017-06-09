@@ -16,14 +16,14 @@ class Http {
 				body
 			};
 			
-			promise = fetch(`http://34.208.11.60:6003/${uri}`, config)
+			promise = fetch(`http://192.168.2.24/:6001/${uri}`, config)
 			.then(response => {
 				return response.json();
 			});
 
 		} else {
 
-			promise = fetch(`http://34.208.11.60:6003/${uri}`)
+			promise = fetch(`http://192.168.2.24:6001/${uri}`)
 			.then(response => {
 				return response.json();
 			});

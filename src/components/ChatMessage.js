@@ -45,10 +45,12 @@ class ChatMessage extends Component {
 		const user = JSON.parse(window.localStorage.getItem("USER"));
 
 		socket.emit('send-message', {
+			sender: user._id,
 			message: message,
 			receiver: userChat._id
 		});
 
+		// clean message
 		this.setState({
 			message: ''
 		})
